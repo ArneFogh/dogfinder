@@ -8,7 +8,7 @@ function App() {
     const [imageUrl, setImageUrl] = useState('');
 
     useEffect(() => {
-        // Fetch the list of breeds using Axios
+        // Fetch the list of breeds using Axios ORALE
         axios.get('https://api.thedogapi.com/v1/breeds')
             .then(response => {
                 setBreeds(response.data);
