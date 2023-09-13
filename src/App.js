@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+import DogDisplay from './DogDisplay'; // Import the new component
 
 function App() {
     const [breeds, setBreeds] = useState([]);
@@ -8,7 +9,6 @@ function App() {
     const [imageUrl, setImageUrl] = useState('');
 
     useEffect(() => {
-        // Fetch the list of breeds using Axios
         axios.get('https://api.thedogapi.com/v1/breeds')
             .then(response => {
                 setBreeds(response.data);
@@ -23,7 +23,6 @@ function App() {
         setSelectedBreedId(breedId);
 
         if (breedId) {
-            // Fetch an image for the selected breed using Axios
             axios.get(`https://api.thedogapi.com/v1/images/search?breed_id=${breedId}`)
                 .then(response => {
                     setImageUrl(response.data[0]?.url);
@@ -48,10 +47,10 @@ function App() {
                 ))}
             </select>
             {imageUrl && (
-                <div>
-                    <h2>{breeds.find(breed => breed.id === parseInt(selectedBreedId))?.name}</h2>
-                    <img src={imageUrl} alt="Selected Breed" style={{ width: '300px', height: 'auto' }} />
-                </div>
+                <DogDisplay 
+                    breedName={breeds.find(breed => breed.id === parseInt(selectedBreedId))?.name}
+                    imageUrl={imageUrl}
+                />
             )}
         </div>
     );
