@@ -1,0 +1,27 @@
+.selectorWrapper {
+    margin: 20px 0;
+    width: 300px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.selectorWrapper::after {
+    content: '▼';
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
