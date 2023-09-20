@@ -49,7 +49,7 @@ function DisplayFavorites() {
     }
 
     return (
-        <div>
+        <div className='favBreeds'>
             <h2>Your Favorite Breeds</h2>
             <ul>
                 {favorites.map(breed => (
