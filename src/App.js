@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import DogApp from './DogApp';
-import AddBreed from './favorites';
 import styles from './App.css';
+import Favorites from './favorites';
 
 function App() {
     return (
@@ -12,10 +12,10 @@ function App() {
                     <nav className={styles.navContainer}>
                         <ul>
                             <li>
-                                <Link to="/">Home</Link>
+                            <Link to="/" activeClassName={styles.activeLink}>Home</Link>
                             </li>
                             <li>
-                                <Link to="/favorites">Favorites</Link>
+                                <Link to="/favorites" activeClassName={styles.activeLink}>Favorites</Link>
                             </li>
                         </ul>
                     </nav>
@@ -24,7 +24,7 @@ function App() {
                 <main>
                     <Routes>
                         <Route path="/" element={<DogApp />} />
-                        <Route path="/add-breed" element={<AddBreed />} />
+                        <Route path="/favorites" element={<Favorites />} />
                     </Routes>
                 </main>
             </div>

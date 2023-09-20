@@ -49,18 +49,34 @@ header {
   text-align: center;
 }
 
+nav.navContainer {
+  display: flex;
+  justify-content: center;
+  background-color: #333; /* Adjust based on your preferred navbar color */
+  padding: 10px 0;
+}
 
-.navContainer ul {
-  list-style-type: none; /* Fjerner prikkerne */
+nav.navContainer ul {
+  list-style-type: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px; /* Space between links */
 }
 
-
-.navContainer ul li {
-  display: inline;
-  margin: 0 10px;
+nav.navContainer a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
+nav.navContainer a:hover {
+  background-color: #007BFF; /* Adjust based on your preferred hover color */
+}
 
-
-
+.activeLink {
+  background-color: #007BFF; /* Adjust based on your preferred active link color */
+  color: #fff;
+}
